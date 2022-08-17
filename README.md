@@ -1,4 +1,5 @@
 # neims
 
 ## 참가자
-- jiyeonghwang
+ - hhsong
+ - jiyeonghwang
