@@ -1,5 +1,6 @@
 # neims
 
 ## 참가자
- - hhsong
- - jiyeonghwang
+ - @Song-H-H
+ - @jiyeonghwang
+ - @clemado1
