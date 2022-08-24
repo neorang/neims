@@ -5,3 +5,4 @@
  - @jiyeonghwang
  - @clemado1
  - @cje614
+ - @kimsy513
