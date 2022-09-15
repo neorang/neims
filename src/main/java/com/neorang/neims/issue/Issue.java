@@ -6,7 +6,9 @@ import com.neorang.neims.users.Users;
 import lombok.Getter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -16,14 +18,19 @@ public class Issue extends BaseEntity {
     @GeneratedValue
     private long issueId;
 
+    @Enumerated(EnumType.STRING)
     private Type type;
 
+    @Enumerated(EnumType.STRING)
     private Status status;
 
+    @Size(max = 200)
     private String title;
 
+    @Size(max = 4000)
     private String description;
 
+    @Enumerated(EnumType.STRING)
     private Priority priority;
 
     private LocalDate deadline;
@@ -47,5 +54,5 @@ public class Issue extends BaseEntity {
     @JoinColumn(name = "parentIssueId")
     private Issue parentIssue  = this;
 
-    private LocalDate resolvedAt;
+    private LocalDateTime resolvedAt;
 }
