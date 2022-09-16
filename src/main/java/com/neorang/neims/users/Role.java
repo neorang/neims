@@ -1,8 +1,8 @@
 package com.neorang.neims.users;
 
 public enum Role {
-    Admin("ADMIN", "관리자"),
-    User("USER", "일반사용자");
+    ADMIN("ADMIN", "관리자"),
+    USER("USER", "일반사용자");
 
     private String roleCode;
     private String roleName;
