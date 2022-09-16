@@ -9,8 +9,7 @@ import javax.validation.constraints.Size;
 @Entity
 public class Users extends BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    private String userId;
 
     @NotNull
     @Size(max = 50)
@@ -21,6 +20,7 @@ public class Users extends BaseEntity {
     private String password;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     @NotNull
