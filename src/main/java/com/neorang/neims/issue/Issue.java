@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 public class Issue extends BaseEntity {
 
     @Id
+    @Column(name = "issue_id")
     @GeneratedValue
     private long issueId;
 
