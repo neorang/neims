@@ -7,3 +7,11 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+jwt:
+  header: Authorization
+  secret: bmVvcmFuZy1sdW5tZW0tbmVpbXMtYmFzZTY0LXNlY3JldC1rZXktZm9yLWp3dC10b2tlbg== # Base64
+  token-validity-in-seconds: 1800 # 30minutes
+  refresh:
+    cookie-name: refresh-token
+    token-validity-in-seconds: 604800 # 1week
