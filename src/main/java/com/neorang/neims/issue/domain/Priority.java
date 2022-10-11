@@ -1,6 +1,8 @@
 package com.neorang.neims.issue.domain;
 
-public enum Priority {
+import com.neorang.neims.globals.mapper.EnumModel;
+
+public enum Priority implements EnumModel {
     BLOCKER("BLOCKER", "BLOCKER"),
     CRITICAL("CRITICAL", "CRITICAL"),
     HIGH("HIGH", "HIGH"),
@@ -14,6 +16,17 @@ public enum Priority {
     Priority(String priorityCode, String priorityName) {
         this.priorityCode = priorityCode;
         this.priorityName = priorityName;
+    }
+
+
+    @Override
+    public String getCode() {
+        return priorityCode;
+    }
+
+    @Override
+    public String getValue() {
+        return priorityName;
     }
 }
 
