@@ -1,4 +1,4 @@
-package com.neorang.neims.issue;
+package com.neorang.neims.issue.domain;
 
 public enum Type {
     BUG("BUG", "버그"),

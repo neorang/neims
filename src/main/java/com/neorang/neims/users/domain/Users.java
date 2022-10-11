@@ -1,4 +1,4 @@
-package com.neorang.neims.users;
+package com.neorang.neims.users.domain;
 
 import com.neorang.neims.globals.BaseEntity;
 

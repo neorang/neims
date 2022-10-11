@@ -1,4 +1,4 @@
-package com.neorang.neims.issue;
+package com.neorang.neims.issue.domain;
 
 public enum Status {
     REQUEST("REQUEST", "요청");
