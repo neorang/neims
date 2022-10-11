@@ -1,6 +1,8 @@
 package com.neorang.neims.issue.domain;
 
-public enum Color {
+import com.neorang.neims.globals.mapper.EnumModel;
+
+public enum Color implements EnumModel {
 
     BLACK("BLACK","BLACK"),
     RED("RED","RED");
@@ -12,5 +14,16 @@ public enum Color {
     Color(String colorCode, String colorName) {
         this.colorCode = colorCode;
         this.colorName = colorName;
+    }
+
+
+    @Override
+    public String getCode() {
+        return colorCode;
+    }
+
+    @Override
+    public String getValue() {
+        return colorName;
     }
 }

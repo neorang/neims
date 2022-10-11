@@ -1,6 +1,8 @@
 package com.neorang.neims.issue.domain;
 
-public enum BlindYn {
+import com.neorang.neims.globals.mapper.EnumModel;
+
+public enum BlindYn implements EnumModel {
 
     Y("Y","Y"),
     N("N","N");
@@ -11,5 +13,15 @@ public enum BlindYn {
     BlindYn(String blindYnCode, String blindYnName) {
         this.blindYnCode = blindYnCode;
         this.blindYnName = blindYnName;
+    }
+
+    @Override
+    public String getCode() {
+        return blindYnCode;
+    }
+
+    @Override
+    public String getValue() {
+        return blindYnName;
     }
 }
