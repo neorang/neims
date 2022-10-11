@@ -1,4 +1,4 @@
-package com.neorang.neims.users;
+package com.neorang.neims.users.domain;
 
 public enum Role {
     ADMIN("ADMIN", "관리자"),

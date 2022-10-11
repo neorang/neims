@@ -1,8 +1,8 @@
-package com.neorang.neims.issue;
+package com.neorang.neims.issue.domain;
 
 
 import com.neorang.neims.globals.BaseEntity;
-import com.neorang.neims.users.Users;
+import com.neorang.neims.users.domain.Users;
 import lombok.Getter;
 
 import javax.persistence.*;
