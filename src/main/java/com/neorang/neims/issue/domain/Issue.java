@@ -3,7 +3,10 @@ package com.neorang.neims.issue.domain;
 
 import com.neorang.neims.globals.BaseEntity;
 import com.neorang.neims.users.domain.Users;
+import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -12,6 +15,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Issue extends BaseEntity {
 
     @Id
@@ -56,4 +60,53 @@ public class Issue extends BaseEntity {
     private Issue parentIssue  = this;
 
     private LocalDateTime resolvedAt;
+
+    @Builder
+    public Issue (long issueId, Type type, Status status, String title, String description, Priority priority, LocalDate deadline, Users assignee, Users manager, Users reviewer, Users tester, Users reporter, Issue parentIssue) {
+        this.issueId = issueId;
+        this.type = type;
+        this.status = status;
+        this.title = title;
+        this.description = description;
+        this.priority = priority;
+        this.deadline = deadline;
+        this.assignee = assignee;
+        this.manager = manager;
+        this.reviewer = reviewer;
+        this.tester = tester;
+        this.reporter = reporter;
+        this.parentIssue = parentIssue;
+    }
+
+    public void updateType(Type type) {
+        this.type = type;
+    }
+
+    public void updateStatus(Status status) {
+        this.status = status;
+    }
+
+    public void updateTitle(String title) {
+        this.title = title;
+    }
+
+    public void updateDescription(String description) {
+        this.description = description;
+    }
+
+    public void changePriority(Priority priority) {
+        this.priority = priority;
+    }
+
+    public void setDeadline(LocalDate deadline) {
+        this.deadline = deadline;
+    }
+
+    public void assignToUser(String userId) {
+        this.assignee = Users.builder().userId(userId).build();
+    }
+
+    public void assignManager(String userId) {
+        this.manager = Users.builder().userId(userId).build();
+    }
 }
