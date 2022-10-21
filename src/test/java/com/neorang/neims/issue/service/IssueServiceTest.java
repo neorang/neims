@@ -39,4 +39,39 @@ class IssueServiceTest {
         Assertions.assertThat(created.getTitle()).isEqualTo("request_test");
 
     }
+
+    @Test
+    void update() {
+        //given
+        Issue issue = issueService.findById(1L);
+
+        IssueForm form = IssueForm.builder()
+                .issueId(issue.getIssueId())
+                .type(Type.BUG)
+                .status(issue.getStatus())
+                .title(issue.getTitle() + "1")
+                .description(issue.getDescription())
+                .build();
+
+        //when
+        Issue updated = issueService.update(form);
+
+        //then
+        Assertions.assertThat(updated.getIssueId()).isEqualTo(issue.getIssueId());
+        Assertions.assertThat(updated.getTitle()).isNotEqualTo(issue.getTitle());
+        Assertions.assertThat(updated.getType()).isNotEqualTo(issue.getType());
+    }
+
+    @Test
+    void delete(){
+        //given
+        Issue issue = issueService.findById(1L);
+
+        //when
+        issueService.delete(issue.getIssueId());
+        Issue deleted = issueService.findById(1L);
+
+        //then
+        Assertions.assertThat(deleted).isNull();
+    }
 }
