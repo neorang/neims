@@ -9,8 +9,8 @@ public interface IssueService {
 
     Issue update(IssueForm form);
 
-    Issue findById(long issueId);
+    Issue findById(Long issueId);
 
-    void delete(long issueId);
+    void delete(Long issueId);
 
 }

@@ -21,7 +21,7 @@ public class Issue extends BaseEntity {
     @Id
     @Column(name = "issue_id")
     @GeneratedValue
-    private long issueId;
+    private Long issueId;
 
     @Enumerated(EnumType.STRING)
     private Type type;
@@ -62,7 +62,7 @@ public class Issue extends BaseEntity {
     private LocalDateTime resolvedAt;
 
     @Builder
-    public Issue (long issueId, Type type, Status status, String title, String description, Priority priority, LocalDate deadline, Users assignee, Users manager, Users reviewer, Users tester, Users reporter, Issue parentIssue) {
+    public Issue (Long issueId, Type type, Status status, String title, String description, Priority priority, LocalDate deadline, Users assignee, Users manager, Users reviewer, Users tester, Users reporter, Issue parentIssue) {
         this.issueId = issueId;
         this.type = type;
         this.status = status;

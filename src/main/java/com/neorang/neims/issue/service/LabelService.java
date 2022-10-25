@@ -9,8 +9,8 @@ public interface LabelService {
 
     Label update(LabelForm form);
 
-    Label findById(long issueId);
+    Label findById(Long issueId);
 
-    void delete(long issueId);
+    void delete(Long issueId);
 
 }
