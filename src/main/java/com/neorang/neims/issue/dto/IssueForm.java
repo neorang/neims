@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Getter
 public class IssueForm {
 
-    private long issueId;
+    private Long issueId;
 
     private Type type;
 
@@ -40,10 +40,10 @@ public class IssueForm {
 
     private String reporterId;
 
-    private long parentIssueId;
+    private Long parentIssueId;
 
     @Builder
-    public IssueForm(long issueId, Type type, Status status, String title, String description, Priority priority, LocalDate deadline, String assigneeId, String managerId, String reviewerId, String testerId, String reporterId, long parentIssueId) {
+    public IssueForm(Long issueId, Type type, Status status, String title, String description, Priority priority, LocalDate deadline, String assigneeId, String managerId, String reviewerId, String testerId, String reporterId, long parentIssueId) {
         this.issueId = issueId;
         this.type = type;
         this.status = status;
