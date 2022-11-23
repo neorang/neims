@@ -33,5 +33,13 @@ public class Label extends BaseEntity {
         this.label = label;
         this.color = color;
     }
+    public void updateLabel(String label) {
+        if (!label.isEmpty()) {
+            this.label = label;
+        }
+    }
 
+    public void updateColor(Color color) {
+        this.color = color;
+    }
 }
