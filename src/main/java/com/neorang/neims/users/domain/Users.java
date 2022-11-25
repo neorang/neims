@@ -33,6 +33,14 @@ public class Users extends BaseEntity {
     @Size(max = 100)
     private String email;
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
     @Builder
     public Users(String userId, String userName, String password, Role role, String email) {
         this.userId = userId;
