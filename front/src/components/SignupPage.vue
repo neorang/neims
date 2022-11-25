@@ -80,9 +80,14 @@ export default {
         email: email
       };
       axios.post("/api/user/signup", params).then(res => {
-        console.log(res.data);
+        console.log(res);
+        if(res.status == 200) {
+            alert(res.data);
+            this.$router.push('/');
+        }
       }).catch(err => {
         console.log(err);
+        alert(err.response.data.errorMsg);
       })
     }
   }
